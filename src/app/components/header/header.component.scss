@@ -1,0 +1,52 @@
+menu {
+  display: grid;
+  margin: 0px;
+  grid-template-columns: 80px 1fr;
+  height: 80px;
+  background-color: cornflowerblue;
+  #logo {
+    img {
+      width: 100%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    float: right;
+
+    li {
+      display: inline-block;
+      padding: 10px;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      img {
+        max-width: 30px;
+      }
+    }
+  }
+}
+.busket-menu{
+  position: absolute;
+  width: 350px;
+  background-color: white;
+  padding: 10px;
+  right: 8px;
+  color: cornflowerblue;
+  border-radius: 10px;
+}
+.banner{
+    min-height: 350px;
+    overflow: hidden;
+    background: url(../../assets/banner.jpg);
+    background-size: cover;
+    background-position-y: center;
+}

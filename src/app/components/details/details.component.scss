@@ -1,0 +1,39 @@
+.detail-info {
+  display: grid;
+  grid-template-areas:
+    "i t"
+    "m m"
+    "b b";
+    margin: 50px auto;
+    grid-template-columns: 360px 1fr;
+
+  .big-img {
+    grid-area: i;
+    img{
+        width: 100%;
+    }
+  }
+
+  .title-info {
+    grid-area: t;
+
+    .prod-title{
+        display: block;
+        font-size: 40px;
+        color: cornflowerblue;
+    }
+    div{
+        display: inline-block;
+        margin: 10px;
+        font-size: 20px;
+    }
+  }
+
+  .main-info {
+    grid-area: m;
+  }
+
+  .buy-part {
+    grid-area: b;
+  }
+}

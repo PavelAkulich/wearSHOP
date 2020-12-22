@@ -1,0 +1,47 @@
+<div>
+  <h4>Product List</h4>
+  <input type="text" [(ngModel)]='searchString' (keyup)='searchForm()'>
+  <div class='content-list'>
+    <div class="filter-type">
+      <div (click)='filterProd(type)' [class.active]='filteredType==type' *ngFor="let type of types">
+        {{type}}
+      </div>
+      <div (click)='refreshList()' [class.active]='filteredType=="all"'>
+        All
+      </div>
+    </div>
+    <div id='all-product-list'>
+      <!-- <div class="all-product-item" *ngFor="let product of products|slice:startIndex:endIndex"> -->
+      <div class="all-product-item" *ngFor="let product of products">
+        <a (click)="viewDetails(product.id)">
+          <div class='all-product-item-name'>
+            <p>{{ product?.title }}</p>
+          </div>
+          <div class='all-product-item-img'>
+            <img src="{{product.imgUrl?product.imgUrl:defaultImg}}" alt="">
+          </div>
+          <div class='item-desc'> 
+            <div class='all-product-item-desc'>{{ product?.description }}</div>
+            <div class='all-product-item-type'>{{ product?.type }}</div>
+          </div>
+        </a>
+        <div class='all-product-item-coast'>
+          <span>Price: {{ product?.price }}</span>
+          <button (click)="addProdToBusket(product?.id)">Buy</button>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination" *ngIf='products?.length'>
+        <li class="page-item"><a class="page-link" (click)='previousPage()'><</a></li>
+        <!-- <li class="page-item" *ngFor='let itemProd of getNumberOfProducts(productService?.prodLength); let ind = index'><a
+            class="page-link" (click)="updateIndex(ind)">{{ind+1}}</a></li> -->
+        <li class="page-item"><a class="page-link" (click)="nextPage()">></a></li>
+      </ul>
+    </nav>
+
+    <!-- <button (click)="removeAllProducts()">
+      Remove All
+    </button> -->
+  </div>
+</div>

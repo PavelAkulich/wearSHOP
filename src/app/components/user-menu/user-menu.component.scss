@@ -1,0 +1,26 @@
+.user-block{
+    position: relative;
+    a{
+        color: white;
+        position: relative;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    
+    .user-message{
+        display: none;
+        background-color: white;
+        color: cornflowerblue;
+        position: absolute;
+        right: 0px;
+        width: 260px;
+        top: 42px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .user-message.show{
+        display: block;
+    }
+}
+

@@ -1,0 +1,18 @@
+<h4>Time to buy</h4>
+<div id='all-product-list'>
+  <div class="all-product-item" *ngFor="let product of products">
+    <a href="">
+      <div class='all-product-item-name'>
+        <p>{{ product.title }}</p>
+      </div>
+      <div class='all-product-item-img'>
+        <img src="{{product.imgUrl?product.imgUrl:defaultImg}}" alt="">
+      </div>
+      <div class='bottom-desc'>
+        <div class='all-product-item-desc'>{{ product.description }}</div>
+        <div class='all-product-item-left'>ONLY {{product.number}} LEFT</div>
+      </div>
+    </a>
+  </div>
+</div>
+<a routerLink="/catalog" routerLinkActive="activebutton" id='view-all'>View all</a>
