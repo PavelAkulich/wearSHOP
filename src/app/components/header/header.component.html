@@ -13,13 +13,13 @@
 </div> -->
 
 <menu>
-  <div id="logo"><a routerLink="/home" routerLinkActive="activebutton"><img src="./../../assets/logo.png" alt=""></a></div>
+  <div id="logo"><a routerLink="/home" routerLinkActive="activebutton"><img src="./../../../assets/logo.png" alt=""></a></div>
   <div id="menu-item">
       <ul>
           <li><input type="text"></li>
           <li><a routerLink="/home" routerLinkActive="activebutton">Home</a></li>
           <li><a routerLink="/catalog" routerLinkActive="activebutton">Catalog</a></li>
-          <li><a (click)="showBuscket()"><img src="./../../assets/busket.png" alt="">{{busketCount?.length?busketCount?.length:0}}</a></li>
+          <li><a (click)="showBuscket()"><img src="./../../../assets/busket.png" alt="">{{busketCount?.length?busketCount?.length:0}}</a></li>
           <li><app-user-menu></app-user-menu></li>
       </ul>
   </div>

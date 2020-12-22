@@ -16,7 +16,7 @@ export class AllProductComponent implements OnInit {
   public currentProduct = null;
   public currentPage = 1;
   public title = '';
-  public defaultImg = './../../assets/noimage.png';
+  public defaultImg = '../../assets/noimage.png';
   public busketCount: number = 0;
   public startIndex = 0;
   public endIndex = 6;
