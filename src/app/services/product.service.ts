@@ -136,6 +136,7 @@ export class ProductService {
   }
 
   seachProd(str): AngularFirestoreCollection<Product> {
+    if (str=='') return this.filterFirstPage();
     return this.db.collection(this.dbPath, (ref) =>
       ref
         .orderBy('title')
