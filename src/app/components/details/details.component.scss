@@ -2,10 +2,11 @@
   display: grid;
   grid-template-areas:
     "i t"
-    "m m"
-    "b b";
+    "i m"
+    "i b";
     margin: 50px auto;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: 400px 1fr;
+  margin: 30px 30px;
 
   .big-img {
     grid-area: i;
@@ -20,6 +21,7 @@
     .prod-title{
         display: block;
         font-size: 40px;
+        text-align: center;
         color: cornflowerblue;
     }
     div{
@@ -31,9 +33,13 @@
 
   .main-info {
     grid-area: m;
+    margin-left: 70px;
+    font-size: 22px;
   }
 
   .buy-part {
     grid-area: b;
+    margin-left: 70px;
+    font-size: 22px;
   }
 }

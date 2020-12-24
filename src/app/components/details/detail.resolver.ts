@@ -7,8 +7,7 @@ export class DetailResolver implements Resolve<any> {
 
   constructor(public firebaseService: ProductService) { }
 
-  resolve(route: ActivatedRouteSnapshot,) {
-
+  resolve(route: ActivatedRouteSnapshot) {
     return new Promise((resolve, reject) => {
       let prodId = route.paramMap.get('id');
       this.firebaseService.getProd(prodId)

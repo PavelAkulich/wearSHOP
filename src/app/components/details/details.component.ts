@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
 import { ProductService } from './../../services/product.service';
 
 @Component({
@@ -16,7 +15,6 @@ export class DetailsComponent implements OnInit {
   constructor(
     public firebaseService: ProductService,
     private route: ActivatedRoute,
-    private router: Router,
   ) { }
 
   ngOnInit() {

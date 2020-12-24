@@ -27,8 +27,9 @@
 <div class="header-busket" *ngIf="showBusketProduct">
   <div class='busket-menu' *ngIf="!busketCount?.length">Busket is empty</div>
   <div class='busket-menu' *ngIf="busketCount?.length">
-    <div *ngFor='let prod of busketCount;let i = index'>
-      {{prod}}
+    <div *ngFor='let prod of busketCount;let i = index' class='busket-item'>
+      <div class='title-busket'>{{prod.title}}</div>
+      <div class='title-price'>{{prod.price}}</div>
       <button (click)="deleteFromBusket(i)">Remove</button>
     </div>
   </div>

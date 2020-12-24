@@ -28,6 +28,10 @@ export class ProductService {
     return this.db.collection(this.dbPath).doc(prodKey).snapshotChanges();
   }
 
+  getProdUnSub(prodKey) {
+    return this.db.collection(this.dbPath).doc(prodKey).ref.get();
+  }
+
   getProdNOW(): AngularFirestoreCollection<Product> {
     return this.db.collection(this.dbPath, (ref) =>
       ref.orderBy('number').limit(3)

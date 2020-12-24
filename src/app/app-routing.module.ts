@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'catalog', component: AllProductComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'details/:id', component: DetailsComponent, resolve:{data : DetailResolver}},
+  {path: 'details/:id', component: DetailsComponent, resolve: {data : DetailResolver}},
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
