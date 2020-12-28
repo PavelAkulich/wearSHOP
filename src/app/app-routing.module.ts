@@ -11,6 +11,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AuthGuard } from "./services/auth.guard";
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { CompareComponent } from './compare/compare.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'register-user', component: SignUpComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent }
+  { path: 'verify-email-address', component: VerifyEmailComponent },
+  { path: 'compare-list', component: CompareComponent },
 ];
 
 @NgModule({

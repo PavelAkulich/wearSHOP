@@ -12,11 +12,9 @@ export class BusketService {
 
   constructor(private productService: ProductService) {}
 
-  public addToBusket(key: string) {
+  public addToBusket(product) {
     this.busketCnt++;
-    this.productService.getProdUnSub(key).then((doc) => {
-      this.busketList.push({id: doc.id, ...doc.data()});
-    });
+    this.busketList.push(product);
     this.onClick.emit(this.busketCnt);
     this.onClick.emit(this.busketList);
   }

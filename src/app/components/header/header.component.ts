@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CompareService } from 'src/app/services/compare.service';
 import { BusketService } from './../../services/busket.service';
 
 @Component({
@@ -10,10 +11,14 @@ export class HeaderComponent implements OnInit {
 
   public showBusketProduct = false;
   public busketCount: any;
+  public compareCount: any;
 
-  constructor(private share:BusketService) {
+  constructor(private share:BusketService, private compare:CompareService,) {
     this.share.onClick.subscribe((cnt: any)=>{
       return this.busketCount = cnt;
+    });
+    this.compare.onClick.subscribe((cnt: any)=>{
+      return this.compareCount = cnt;
     });
   }
 

@@ -4,6 +4,7 @@ import { ProductService } from './../../services/product.service';
 import { BusketService } from './../../services/busket.service';
 import Product from './../../model/product';
 import { Router, Params } from '@angular/router';
+import { CompareService } from 'src/app/services/compare.service';
 
 @Component({
   selector: 'app-all-product',
@@ -15,11 +16,9 @@ export class AllProductComponent implements OnInit {
   public types: Array<any>;
   public currentProduct = null;
   public currentPage = 1;
-  public title = '';
   public defaultImg = '../../assets/noimage.png';
   public busketCount: number = 0;
-  public startIndex = 0;
-  public endIndex = 6;
+  public compareCount: number = 0;
   public itemPerPage = 6;
   public filteredType = 'all';
   public searchString: string = ''
@@ -28,9 +27,11 @@ export class AllProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private share: BusketService,
-    private router: Router
+    private router: Router,
+    private compare: CompareService
   ) {
     this.share.onClick.subscribe((cnt: any) => (this.busketCount = cnt));
+    this.compare.onClick.subscribe((cnt: any) => (this.compareCount = cnt));
   }
 
   public ngOnInit(): void {
@@ -63,17 +64,17 @@ export class AllProductComponent implements OnInit {
       });
   }
 
-  public addProdToBusket(key: string) {
-    this.share.addToBusket(key);
+  public addProdToBusket(product) {
+    this.share.addToBusket(product);
+  }
+
+  public addProdToCompare(product) {
+    this.compare.addToCompareList(product);
+    console.log(this.compare.compareList)
   }
 
   public getNumberOfProducts(length: number) {
     return new Array(Math.ceil(length / this.itemPerPage));
-  }
-
-  public updateIndex(pageIndex: number) {
-    this.startIndex = pageIndex * this.itemPerPage;
-    this.endIndex = this.startIndex + this.itemPerPage;
   }
 
   public previousPage() {

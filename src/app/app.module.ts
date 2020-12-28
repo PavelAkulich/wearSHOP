@@ -21,6 +21,7 @@ import { BusketService } from './services/busket.service';
 import { DetailsComponent } from './components/details/details.component';
 import { DetailResolver } from './components/details/detail.resolver';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
+import { CompareComponent } from './compare/compare.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UserMenuComponent } from './components/user-menu/user-menu.component';
     HomeComponent,
     DetailsComponent,
     UserMenuComponent,
+    CompareComponent,
   ],
   imports: [
     BrowserModule,
