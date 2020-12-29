@@ -1,0 +1,14 @@
+<div class='compare-table'>
+    <div *ngFor='let comp of compare.compareList; let i = index' class='compare-item'>
+        <div class='title'>{{comp.title}}</div>
+        <div class='type'>{{comp.type}}</div>
+        <div class='description'>{{comp.description}}</div>
+        <div class='price'>{{comp.price}}</div>
+        <button (click)="addProdToBusket(comp)">Buy</button>
+        <button (click)="deleteFromCompareList(i)">Remove</button>
+    </div>
+    <div *ngIf='compare.compareList.length == 0' class='comp-list-empty'>
+        <div class='message'>Your compare list empty!</div>
+        <div>Please add some product to compare</div>
+    </div>
+</div>

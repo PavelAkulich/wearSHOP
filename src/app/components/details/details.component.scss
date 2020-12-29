@@ -1,0 +1,45 @@
+.detail-info {
+  display: grid;
+  grid-template-areas:
+    "i t"
+    "i m"
+    "i b";
+    margin: 50px auto;
+    grid-template-columns: 400px 1fr;
+  margin: 30px 30px;
+
+  .big-img {
+    grid-area: i;
+    img{
+        width: 100%;
+    }
+  }
+
+  .title-info {
+    grid-area: t;
+
+    .prod-title{
+        display: block;
+        font-size: 40px;
+        text-align: center;
+        color: cornflowerblue;
+    }
+    div{
+        display: inline-block;
+        margin: 10px;
+        font-size: 20px;
+    }
+  }
+
+  .main-info {
+    grid-area: m;
+    margin-left: 70px;
+    font-size: 22px;
+  }
+
+  .buy-part {
+    grid-area: b;
+    margin-left: 70px;
+    font-size: 22px;
+  }
+}

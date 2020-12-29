@@ -1,0 +1,41 @@
+.compare-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin: 0px 100px;
+
+  .compare-item{ 
+    padding-top: 50px;
+    div{
+      color: cornflowerblue;
+      font-size: 20px;
+      margin-bottom: 30px;
+      border-bottom: 2px cornflowerblue solid;
+      text-align: center;
+    }
+    button{
+      color: white;
+      background-color: cornflowerblue;
+      border: 0px;
+      outline: none;
+      border-radius: 10px;
+      margin: 0px 30px;
+      padding: 5px;
+    }
+    button:hover {
+      background-color: darkslateblue;
+    }
+  }
+  .comp-list-empty{
+    div{
+      color: cornflowerblue;
+      font-size: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .message{
+      padding-top: 50px;
+      font-size: 25px;
+    }
+  }
+}

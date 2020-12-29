@@ -1,0 +1,20 @@
+<div *ngIf="authService.isLoggedIn; else other_content" class='user-block'>
+    <a (click)='userMessage =! userMessage'>User</a>
+    <div class='user-message' [class.show]='userMessage'>
+        <p>{{(authService.userData?.displayName) ? authService.userData?.displayName : 'User'}}</p>
+        <p>Email: <strong>{{authService.userData?.email}}</strong></p>
+        <button (click)='goProfile()'>Profile</button> <button (click)='logOut()'>Log Out</button>
+    </div>
+</div>
+
+<ng-template #other_content>
+    <div class='user-block'>
+        <a (click)='userMessage = !userMessage'>User</a>
+        <div class='user-message' [class.show]='userMessage'>
+            <p>
+                You are not authorised
+            </p>
+            <button (click)='logIn()'>Log in</button>
+        </div>
+    </div>
+</ng-template>
