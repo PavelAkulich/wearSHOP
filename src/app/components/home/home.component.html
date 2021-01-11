@@ -1,7 +1,7 @@
 <h4>Time to buy</h4>
 <div id='all-product-list'>
   <div class="all-product-item" *ngFor="let product of products">
-    <a href="">
+    <a (click)="viewDetails(product.id)">
       <div class='all-product-item-name'>
         <p>{{ product.title }}</p>
       </div>

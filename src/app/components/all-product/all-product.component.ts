@@ -20,8 +20,8 @@ export class AllProductComponent implements OnInit {
   public busketCount: number = 0;
   public compareCount: number = 0;
   public itemPerPage = 6;
-  public filteredType = 'all';
-  public searchString: string = ''
+  public filteredType = 'type1';
+  public searchString: string = '';
   private lastProduct: Product;
 
   constructor(
@@ -70,7 +70,6 @@ export class AllProductComponent implements OnInit {
 
   public addProdToCompare(product) {
     this.compare.addToCompareList(product);
-    console.log(this.compare.compareList)
   }
 
   public getNumberOfProducts(length: number) {
@@ -82,7 +81,6 @@ export class AllProductComponent implements OnInit {
       this.currentPage - 1 >
       0
     ) {
-      console.log(this.productService.prodLength);
       this.currentPage--;
       this.productService
         .getPrevPage(this.lastProduct, this.filteredType)
@@ -106,7 +104,6 @@ export class AllProductComponent implements OnInit {
       this.currentPage + 1 <=
       Math.ceil(this.productService.prodLength / this.itemPerPage)
     ) {
-      console.log(this.productService.prodLength);
       this.currentPage++;
       this.productService
         .getNextPage(this.lastProduct, this.filteredType)
@@ -179,14 +176,13 @@ export class AllProductComponent implements OnInit {
         )
       )
       .subscribe((result) => {
-        console.log(result)
         this.products = result;
       });
   }
-  // public removeAllProducts(): void {
-  //   this.productService
-  //     .deleteAll()
-  //     .then(() => this.refreshList())
-  //     .catch((err) => console.log(err));
-  // }
+  inBusket(product){
+    return this.share.contains(product);
+  }
+  inCompare(product){
+    return this.compare.contains(product);
+  }
 }

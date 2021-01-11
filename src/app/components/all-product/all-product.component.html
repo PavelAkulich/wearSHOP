@@ -27,8 +27,8 @@
         </a>
         <div class='all-product-item-coast'>
           <span>Price: {{ product?.price }}</span>
-          <button (click)="addProdToBusket(product)">Buy</button>
-          <button (click)="addProdToCompare(product)">Compare</button>
+          <button (click)="addProdToBusket(product)" [disabled]='inBusket(product)'>Buy</button>
+          <button (click)="addProdToCompare(product)"  [disabled]='inCompare(product)'>Compare</button>
         </div>
       </div>
     </div>

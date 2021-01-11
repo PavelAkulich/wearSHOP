@@ -24,4 +24,9 @@ export class BusketService {
     this.onClick.emit(this.busketCnt);
     this.onClick.emit(this.busketList);
   }
+
+  public contains(product){
+    return  this.busketList.indexOf(product) != -1;
+  }
+
 }

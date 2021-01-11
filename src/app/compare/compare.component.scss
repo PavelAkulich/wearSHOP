@@ -26,6 +26,12 @@
       background-color: darkslateblue;
     }
   }
+  .compare-item:first-child{
+    div{
+      border-bottom: 0px;
+      text-align: left;
+    }
+  }
   .comp-list-empty{
     div{
       color: cornflowerblue;

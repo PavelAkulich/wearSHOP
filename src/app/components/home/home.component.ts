@@ -4,6 +4,7 @@ import { ProductService } from './../../services/product.service';
 import { AngularFireList } from '@angular/fire/database';
 import { map, filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   public products!: Array<Product>;
   public defaultImg = './../../assets/noimage.png'
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
     this.retrieveProducts();
@@ -29,5 +30,9 @@ export class HomeComponent implements OnInit {
         )
       )
       .subscribe((data) => (this.products = data));
+  }
+
+  public viewDetails(key) {
+    this.router.navigate(['/details/' + key]);
   }
 }

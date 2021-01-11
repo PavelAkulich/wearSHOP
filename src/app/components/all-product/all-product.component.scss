@@ -92,6 +92,10 @@ h4 {
       button:hover {
         background-color: darkslateblue;
       }
+      button:disabled,
+      button[disabled]{
+        background-color: rgb(58, 57, 63);
+      }
     }
   }
 
