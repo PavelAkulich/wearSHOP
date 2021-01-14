@@ -12,9 +12,11 @@ export class HeaderComponent implements OnInit {
   public showBusketProduct = false;
   public busketCount: any;
   public compareCount: any;
+  public averagePrice: number = 0;
 
   constructor(private share:BusketService, private compare:CompareService,) {
     this.share.onClick.subscribe((cnt: any)=>{
+      this.averagePrice = this.share.getAveragePrice();
       return this.busketCount = cnt;
     });
     this.compare.onClick.subscribe((cnt: any)=>{

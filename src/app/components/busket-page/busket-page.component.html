@@ -1,0 +1,23 @@
+<div>
+    <div class='busket-item-pay' *ngFor='let prod of busket.busketList;let i = index'>
+        <div class='image-busket'>
+            <img src="{{prod.imgUrl?prod.imgUrl:defaultImg}}" alt="">
+        </div>
+        <div class='info-buskt'>
+            <div class='title-busket'>{{prod.title}}</div>
+            <div class='type-busket'>{{prod.type}}</div>
+            <div class='desc-busket'>{{prod.description}}</div>
+        </div>
+        <div class='count-busket'>
+
+        </div>
+        <div class='coast-info-busket'>
+            <div class='coast-busket'>{{prod.price}}</div>
+            <button (click)='deleteFromBusket(i)'>Remove</button>
+        </div>
+    </div>
+    <div>
+        <div><a routerLink="/deliver" routerLinkActive="activebutton">Place an order</a></div>
+        <div>Average price of your busket {{getPrice()}}</div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -21,7 +22,10 @@ import { BusketService } from './services/busket.service';
 import { DetailsComponent } from './components/details/details.component';
 import { DetailResolver } from './components/details/detail.resolver';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
-import { CompareComponent } from './compare/compare.component';
+import { CompareComponent } from './components/compare/compare.component';
+import { BusketPageComponent } from './components/busket-page/busket-page.component';
+import { DeliverPageComponent } from './components/deliver-page/deliver-page.component';
+import { PayPageComponent } from './components/pay-page/pay-page.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +38,16 @@ import { CompareComponent } from './compare/compare.component';
     DetailsComponent,
     UserMenuComponent,
     CompareComponent,
+    BusketPageComponent,
+    DeliverPageComponent,
+    PayPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule,
     AngularFirestoreModule,
   ],
   providers: [BusketService, DetailResolver, AuthService],

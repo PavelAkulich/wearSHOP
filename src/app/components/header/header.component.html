@@ -1,45 +1,37 @@
-<!-- <div>
-  buscket {{buscketCount}}
-  <button (click)="showBuscket()">Show busket</button>
-  <div class="header-busket" *ngIf="showBusketProduct">
-    <p *ngIf="!productInBuscket?.length">Busket is empty</p>
-    <div *ngIf="productInBuscket?.length">
-      <div *ngFor='let prod of productInBuscket;let i = index'>
-        {{prod}}
-        <button (click)="deleteFromBusket(i)"></button>
-      </div>
+<div id='menu'>
+  <menu>
+    <div id="logo"><a routerLink="/home" routerLinkActive="activebutton"><img src="./../../../assets/logo.png"
+          alt=""></a>
     </div>
-  </div>
-</div> -->
-
-<menu>
-  <div id="logo"><a routerLink="/home" routerLinkActive="activebutton"><img src="./../../../assets/logo.png" alt=""></a>
-  </div>
-  <div id="menu-item">
-    <ul>
-      <li><a routerLink="/home" routerLinkActive="activebutton">Home</a></li>
-      <li><a routerLink="/catalog" routerLinkActive="activebutton">Catalog</a></li>
-      <li><a (click)="showBuscket()"><img src="./../../../assets/busket.png"
-            alt="">{{busketCount?.length?busketCount?.length:0}}</a></li>
-      <li>
-        <app-user-menu></app-user-menu>
-      </li>
-    </ul>
-  </div>
-</menu>
-<div class="header-busket" *ngIf="showBusketProduct">
-  <div class='busket-menu' *ngIf="!busketCount?.length">
-    <div>Busket is empty</div>
-    <a routerLink="/compare-list" routerLinkActive="activebutton">Compare List</a>
-  </div>
-  <div class='busket-menu' *ngIf="busketCount?.length">
-    <div *ngFor='let prod of busketCount;let i = index' class='busket-item'>
-      <div class='title-busket'>{{prod.title}}</div>
-      <div class='title-price'>{{prod.price}}</div>
-      <button (click)="deleteFromBusket(i)">Remove</button>
+    <div id="menu-item">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="activebutton">Home</a></li>
+        <li><a routerLink="/catalog" routerLinkActive="activebutton">Catalog</a></li>
+        <li><a (click)="showBuscket()"><img src="./../../../assets/busket.png"
+              alt="">{{busketCount?.length?busketCount?.length:0}}</a>
+          <div class="header-busket" *ngIf="showBusketProduct">
+            <div class='busket-menu' *ngIf="!busketCount?.length">
+              <div>Busket is empty</div>
+              <a routerLink="/compare-list" routerLinkActive="activebutton">Compare List</a>
+            </div>
+            <div class='busket-menu' *ngIf="busketCount?.length">
+              <div *ngFor='let prod of busketCount;let i = index' class='busket-item'>
+                <div class='title-busket'>{{prod.title}}</div>
+                <div class='title-price'>{{prod.price}}</div>
+                <button (click)="deleteFromBusket(i)">Remove</button>
+              </div>
+              <div class='average-price'>Average price {{averagePrice}}</div>
+              <a routerLink="/busket" routerLinkActive="activebutton">Go busket</a><br /><br />
+              <a routerLink="/compare-list" routerLinkActive="activebutton">Compare List</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <app-user-menu></app-user-menu>
+        </li>
+      </ul>
     </div>
-    <a routerLink="/compare-list" routerLinkActive="activebutton">Compare List</a>
-  </div>
+  </menu>
 </div>
 <div class="banner">
 

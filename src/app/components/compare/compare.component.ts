@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CompareService } from 'src/app/services/compare.service';
-import { BusketService } from './../services/busket.service';
+import { BusketService } from './../../services/busket.service';
 
 @Component({
   selector: 'app-compare',

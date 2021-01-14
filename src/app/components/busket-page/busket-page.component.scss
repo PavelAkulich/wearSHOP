@@ -1,0 +1,27 @@
+.busket-item-pay{
+    display: grid;
+    grid-template-columns: 2fr 10fr 1fr 2fr;
+    margin: 0px 30px;
+
+    .info-buskt{
+        padding: 0px 20px;
+
+        .title-busket {
+            font-size: 24px;
+            color: cornflowerblue;
+        }
+
+        .type-busket {
+            font-size: 15px;
+            color: #adadad;
+        }
+
+        .desc-busket {
+            font-size: 17px;
+        }
+    }
+    
+    img{
+        width: 100%;
+    }
+}

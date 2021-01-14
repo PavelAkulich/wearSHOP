@@ -1,0 +1,27 @@
+<form [formGroup]="payForm" novalidate > 
+    <!-- (ngSubmit)="submit()" -->
+    <div class="form-group">
+        <label>City</label>
+        <input class="form-control"  formControlName="city" />
+          
+        <!-- <div class="alert alert-danger"
+            *ngIf="payForm.controls['userName'].invalid && payForm.controls['userName'].touched">
+            Не указано имя
+        </div> -->
+        <label>Street</label>
+        <input class="form-control" formControlName="street" />
+        <label><Address></Address></label>
+        <input class="form-control" formControlName="address" />
+        <label>Comment</label>
+        <input class="form-control" formControlName="comment" />
+        <label>Cart Nomber</label>
+        <input class="form-control" name="phone" formControlName="cartNomber" />
+        <label>Mounth</label>
+        <input class="form-control" name="phone" formControlName="mounth" />
+        <label>Year</label>
+        <input class="form-control" name="phone" formControlName="year" />
+        <button class="btn btn-default" [disabled]="payForm.invalid">
+            Отправить
+        </button>
+    </div>
+</form>

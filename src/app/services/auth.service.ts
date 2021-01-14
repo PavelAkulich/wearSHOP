@@ -26,6 +26,7 @@ export class AuthService {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
+        console.log( this.userData )
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
       } else {
@@ -113,13 +114,24 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+      userBusket: null
     }
     return userRef.set(userData, {
       merge: true
     })
   }
 
+  SetBusketUser(basket){
+    this.userData = {...this.userData, userBusket: JSON.stringify(basket)}
+    this.afs.doc(`users/${this.userData.uid}`).update({ userBusket: JSON.stringify(basket)});
+    console.log( this.userData )
+    localStorage.setItem('user', JSON.stringify(this.userData));
+    JSON.parse(localStorage.getItem('user'));
+  }
+  GetBusketUser(){
+    return this.userData.userBusket ? JSON.parse(this.userData.userBusket) : [];
+  }
   // Sign out 
   SignOut() {
     return this.afAuth.signOut().then(() => {

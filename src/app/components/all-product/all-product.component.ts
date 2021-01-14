@@ -35,8 +35,8 @@ export class AllProductComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.retrieveProducts();
     this.getAllTypes();
+    this.retrieveProducts();
   }
 
   public refreshList(): void {
